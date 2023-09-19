@@ -35,8 +35,9 @@ const PokemonContainer = () => {
     getPokemon();
   }, [selectedPokemon]);
   return (
-    <div>
-      {list.map((pokemon) => (
+    <div className="App">
+      {isLoading ? (<div>Loading...</div>) :
+      list.map((pokemon) => (
         <div onClick={() => setSelectedPokemon(pokemon.url)}>
           {pokemon.name}
         </div>
